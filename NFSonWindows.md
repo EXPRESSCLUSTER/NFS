@@ -1,4 +1,4 @@
-# NFS on Windows 
+# NFS Cluster on Windows 
 - This article describes how to create NFS cluster on Windows Server.
 
 ## Index
@@ -44,7 +44,29 @@
   - CentOS Linux release 7.7.1908
 
 ## Modify Registry Keys
-
+1. Add the following value to disable handle singning.
+   - Key: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\NfsServer\Parameters
+     - Name: HandleSigningEnabled
+     - Type: REG_DWORD
+     - Data: 0x0
+1. Add the following values to disable Stealth Mode of Windows Firewall.
+   - HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsFirewall\DomainProfile
+     - Name: DisableStealthMode
+     - Type: REG_DWORD
+     - Data: 0x1
+   - HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsFirewall\PrivateProfile
+     - Name: DisableStealthMode
+     - Type: REG_DWORD
+     - Data: 0x1
+   - HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsFirewall\PublicProfile
+     - Name: DisableStealthMode
+     - Type: REG_DWORD
+     - Data: 0x1
+   - HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsFirewall\StandardProfile
+     - Name: DisableStealthMode
+     - Type: REG_DWORD
+     - Data: 0x1
+1. Restart the cluster servers. 
 
 ## Create NFS Cluster
 1. Install **NFS Server** role on the cluster servers.
