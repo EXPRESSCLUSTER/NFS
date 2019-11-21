@@ -6,3 +6,7 @@
 
 ## NFS Cluster on Windows Server
 - Please refer to https://github.com/EXPRESSCLUSTER/NFS/blob/master/NFSonWindows.md
+
+## Special Thanks
+- Umeyama-san
+- Shin-chan
