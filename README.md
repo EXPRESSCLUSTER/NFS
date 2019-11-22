@@ -10,3 +10,5 @@
 ## Special Thanks
 - Umeyama-san
 - Shin-chan
+- [Rei Igarashi](https://github.com/Igaigasuru)
+- [Taira Takemoto](https://github.com/tairametal)
