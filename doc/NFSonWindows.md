@@ -3,10 +3,14 @@
 
 ## Index
 - [Overview](#overview)
+- [Note](#note)
 - [Evaluation Environment](#evaluation-environment)
 - [Install NFS Server Role](#install-nfs-server-role)
 - [Modify Registry Keys](#modify-registry-keys)
 - [Create NFS Cluster](#create-nfs-cluster)
+
+## Note
+- If NFS client machine uses NFSv4, **Stale file handle** error will occur and you need to remount to fix this error.
 
 ## Overview
 ```
@@ -122,6 +126,9 @@
          - If the cluster server network is 192.168.0.0/24, you need to assign 192.168.0.x.
 
 ## Appendix
+### Performance Tuning NFS File Servers
+- https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/role/file-server/nfs-file-server
+<!--
 ### Registry Keys
 - HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\NfsServer\Parameters
   - Name: HandleSigningEnabled
@@ -143,3 +150,4 @@
   - Name: DisableStealthMode
   - Type: REG_DWORD
   - Data: 0x1
+-->
